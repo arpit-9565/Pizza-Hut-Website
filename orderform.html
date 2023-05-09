@@ -1,0 +1,211 @@
+<html>
+<head>
+<title>Order Form</title>
+<link rel="stylesheet" href="form.css">
+<script type="text/javascript">
+function print(form)
+{
+var na=frm.firstn.value;
+var mo=frm.mobi.value;
+var pc=frm.pcod.value;
+var st=frm.state.value;
+var dis=frm.dist.value;
+var cit=frm.town.value;
+var b=frm.price.value;
+if(na.length==0 || mo.length==0 || pc.length==0 || st.length==0 || dis.length==0 || cit.length==0)
+alert("Kindly fill above details");
+else
+alert("Dear "+na+"! Your order has been placed and your order value is Rs."+b); 
+}
+
+function mob()
+{
+var mob=frm.mobi.value;
+if(mob.length==0)
+{
+alert("Enter Mobile No.");
+}
+if(mob.length!=0) 
+ {
+  if(isNaN(mob)==false)
+   {
+    if(mob.length!=10)
+     {
+     alert("Invalid Mobile No.");
+     }
+   }
+ }	
+if(isNaN(mob))
+{
+alert("Kindly ! Input Numeric Value");
+}
+}
+
+function pcode()
+{
+var pc=frm.pcod.value;
+if(pc.length==0)
+{
+alert("Enter Pin Code No.");
+}
+if(pc.length!=0) 
+ {
+  if(isNaN(pc)==false)
+   {
+    if(pc.length!=6)
+     {
+     alert("Invalid Pin Code No.");
+     }
+   }
+ }	
+if(isNaN(pc))
+{
+alert("Kindly ! Input Numeric Value");
+}
+}
+
+function name()
+{
+var n1=frm.firstn.value;
+frm.firstn.value=n1.toUpperCase();
+if(n1.length==0)
+ {
+  alert("Kindly! Enter Your Name");
+ }
+if(isNaN(n1)==false)
+ {
+   if(n1.length!=0)
+    {
+    alert("Name must contain Alphabets");
+   }
+ }
+}
+
+function sta()
+{
+var ct=frm.state.value;
+frm.state.value=ct.toUpperCase();
+if(ct.length==0)
+{
+alert("Kindly! Enter Yours State");
+}
+if(ct.length!=0)
+ {
+  if(isNaN(ct)==false)
+   {
+     alert("Enter correct State Name");
+   }
+ }
+}
+
+function dis()
+{
+var dt=frm.dist.value;
+frm.dist.value=dt.toUpperCase();
+if(dt.length==0)
+{
+alert("Kindly! Enter Yours District");
+}
+if(dt.length!=0)
+ {
+  if(isNaN(dt)==false)
+   {
+     alert("Enter correct District Name");
+   }
+ }
+}
+
+function tow()
+{
+var tw=frm.town.value;
+frm.town.value=tw.toUpperCase();
+if(tw.length==0)
+{
+alert("Kindly! Enter Your Town");
+}
+if(tw.length!=0)
+ {
+  if(isNaN(tw)==false)
+   {
+     alert("Enter correct Town Name");
+   }
+ }
+}
+
+</script>
+<style>
+h1{
+text-shadow: 2px 2px cyan;
+}
+.button {
+  background-color: #ddd;
+  border-radius: 12px;
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: red;
+  color: white;
+}
+.button1 {
+  background-color: #ddd;
+  border-radius: 12px;
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button1:hover {
+  background-color: green;
+  color: white;
+}
+</style>
+</head>
+<body bgcolor="cyan" text="black">
+<center><h1>Order Form</h1>
+<form name="frm"><center>
+<table bgcolor="pink" border="5" bordercolor="purple" cellpadding="5" cellspacing="15">
+<tr>
+<td>Name:<br><br></td>
+<td><input type="text" name="firstn" onBlur="name()"> <br><br></td>
+</tr>
+<tr>
+<td>Mobile No:<br><br></td>
+<td><input type="text" name="mobi" MAXLENGTH="10" onBlur="mob()"><br><br></td>
+</tr><tr>
+<td>Pin Code:<br><br></td>
+<td><input type="text" name="pcod" MAXLENGTH="6" onBlur="pcode()"><br><br></td></tr>
+<td>State:<br><br></td>
+<td> <input type="text" name="state" onBlur="sta()"><br><br></td>
+</tr><tr>
+<td>District:<br><br></td>
+<td><input type="text" name="dist" onBlur="dis()"><br><br></td></tr>
+<tr>
+<td>City/Town:<br><br></td>
+<td><input type="text" name="town" onBlur="tow()"><br><br></td>
+</tr>
+<tr>
+<tr>
+<td>Price:<br><br></td>
+<td><input type="text" name="price" value="199"><br><br></td></tr>
+<td><button class="button">Reset</button></td>
+<td><button class="button1" onClick=print(this.form)>Place Order</button></td></tr>
+</table>
+</center>
+</form>
+</body>
+</html>
